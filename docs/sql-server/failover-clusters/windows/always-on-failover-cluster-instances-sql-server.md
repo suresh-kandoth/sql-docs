@@ -95,7 +95,7 @@ manager: craigg
   
  At any time, only the resource group owner (and no other node in the FCI) is running its respective [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] services in the resource group. When a failover occurs, whether it be an automatic failover or a planned failover, the following sequence of events happen:  
   
-1.  Unless a hardware or system failure occurs, all dirty pages in the buffer cache are written to disk.  
+1.  Unless a hardware or system failure occurs, all dirty pages in the buffer cache are written to disk (if the entire operation can be completed within the PendingTimeout cluster resource property).  
   
 2.  All respective [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] services in the resource group are stopped on the active node.  
   
